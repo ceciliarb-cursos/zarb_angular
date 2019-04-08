@@ -8,6 +8,8 @@ import { CabecalhoComponent } from './pages/cabecalho/cabecalho.component';
 import { ConteudoComponent } from './pages/conteudo/conteudo.component';
 import { RodapeComponent } from './pages/rodape/rodape.component';
 import { HomeComponent } from './pages/home/home.component';
+import { CarrinhoComponent } from './pages/carrinho/carrinho.component';
+import { CheckoutComponent } from './pages/checkout/checkout.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +17,9 @@ import { HomeComponent } from './pages/home/home.component';
     CabecalhoComponent,
     ConteudoComponent,
     RodapeComponent,
-    HomeComponent
+    HomeComponent,
+    CarrinhoComponent,
+    CheckoutComponent
   ],
   imports: [
     BrowserModule,
