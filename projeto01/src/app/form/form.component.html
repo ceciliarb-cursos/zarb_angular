@@ -1,0 +1,49 @@
+<div class="row p-4">
+  <div class="col-5 mx-auto">
+      <div class="card">
+          <div class="card-header"><h3>{{titulo}}</h3></div>
+          <div class="card-body">
+            <form [formGroup]="formContato">
+              <div class="row">
+                <input type="text" name="nome" id="nome" class="form-control" placeholder="nome" formControlName="nome" [ngClass]="{'is-invalid': !nome.pristine && nome.errors}">
+                <div *ngIf="!nome.pristine && nome.errors" class="text-danger">
+                  <p *ngIf="nome.errors.required">Nome é obrigatório.</p>
+                  <p *ngIf="nome.errors.minlength">Nome deve ter pelo menos 3 caracteres.</p>
+                  <p *ngIf="nome.errors.maxlength">Nome não pode ter mais de 20 caracteres.</p>
+                </div>
+                {{ nome.errors | json }}
+
+              </div>
+              <hr>
+              <div class="row">
+                <input type="text" name="email" id="email" class="form-control" placeholder="email" formControlName="email" [ngClass]="{'is-invalid': !email.pristine && email.errors}">
+                <div *ngIf="!email.pristine && email.errors" class="text-danger">
+                  <p *ngIf="email.errors.required">Email é obrigatório.</p>
+                  <p *ngIf="email.errors.email">Formato inválido de email.</p>
+                </div>
+
+                  {{ email.errors | json }}
+              </div>
+              <hr>
+              <div class="row">
+                <input type="text" name="telefone" id="telefone" class="form-control" placeholder="telefone" formControlName="telefone">
+                {{ telefone.errors | json }}
+              </div>
+              <hr>
+              <div class="row">
+                <input type="text" name="data_nasc" id="data_nasc" class="form-control" placeholder="data de nascimento" formControlName="data_nasc">
+                {{ data_nasc.errors | json }}
+              </div>
+              <hr>
+              <div class="row">
+                <button class="btn btn-block btn-primary" (click)="salvar()" [disabled]="!formContato.valid">Salvar</button>
+                <button class="btn btn-block btn-secondary" (click)="cancelar()">Limpar</button>
+              </div>
+            </form>
+          </div>
+        </div>
+        
+  </div>
+</div>
+<div>{{ formContato.value | json }}</div>
+<div>{{ formContato.valid | json }}</div>

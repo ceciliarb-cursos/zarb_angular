@@ -1,0 +1,44 @@
+{
+  "clients": [
+    {
+      "id": 1,
+      "nome": "Cecilia Ribeiro"
+    },
+    {
+      "id": 2,
+      "nome": "Seu Madruga"
+    }
+  ],
+  "produtos": [
+    {
+      "id": 1,
+      "nome": "IPhone 5",
+      "foto": "https://d26lpennugtm8s.cloudfront.net/stores/112/482/products/panasonic-gd551-4b97661cef3165337b14731673693500-1024-1024.jpg",
+      "preco": "800"
+    },
+    {
+      "id": 2,
+      "nome": "Asus Zenfone",
+      "foto": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-lwtnk_bKunfKEfG55MlHqspos_-Y4azZoNGUCBwdLeZKJZYEJw",
+      "preco": "900"
+    },
+    {
+      "id": 3,
+      "nome": "IPhone 6",
+      "foto": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNwGMY6QGHuewe2_H8mwNYF_0qg-4Ri0rg6n4XjWS8Mws7TUq5",
+      "preco": "1000"
+    },
+    {
+      "id": 4,
+      "nome": "IPhone 7",
+      "foto": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRU-C5rgVjhYty-NMhfYH9-cIWbfCDkCOnR3nxeR6CdAO04CGT_XA",
+      "preco": "1100"
+    },
+    {
+      "id": 5,
+      "nome": "IPhone 8",
+      "foto": "http://www.icelular.com.br/get/mobile/panasonic_x100.gif",
+      "preco": "1200"
+    }
+  ]
+}

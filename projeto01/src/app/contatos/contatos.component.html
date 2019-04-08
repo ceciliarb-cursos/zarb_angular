@@ -1,0 +1,52 @@
+<div class="row m-2">
+  <div class="col-3">
+      <div class="card">
+          <div class="card-header"><h3>Contatos</h3></div>
+          <div class="card-body">
+            <div class="row">
+              <input type="text" name="nome" id="nome" class="form-control" [(ngModel)]="contato.nome" placeholder="nome" [ngClass]="{'is-invalid': !contato.nome}">
+            </div>
+            <hr>
+            <div class="row">
+              <input type="text" name="telefone" id="telefone" class="form-control" [(ngModel)]="contato.telefone" placeholder="telefone" [ngClass]="{'is-invalid': !contato.telefone}">
+            </div>
+            <hr>
+            <div class="row">
+              <input type="text" name="email" id="email" class="form-control" [(ngModel)]="contato.email" placeholder="email">
+            </div>
+            <hr>
+            <div class="row">
+              <input type="text" name="data_nasc" id="data_nasc" class="form-control" [(ngModel)]="contato.data_nasc" placeholder="data de nascimento">
+            </div>
+            <hr>
+            <div class="row">
+              <button class="btn btn-block btn-primary" (click)="salvar()" [disabled]="!contato.nome || !contato.telefone">Salvar</button>
+              <button class="btn btn-block btn-secondary" (click)="cancelar()" *ngIf="contato.nome || contato.telefone || contato.email || contato.data_nasc">Limpar</button>
+            </div>
+        
+          </div>
+        </div>
+        
+  </div>
+  <div class="col">
+    <div class="card">
+      <div class="card-header">Lista</div>
+      <div class="card-body">
+        <table class="table table-dark table-bordered table-striped table-hover ">
+            <tr>
+              <th>ID</th><th>Nome</th><th>Telefone</th><th>Email</th><th>Data de Nascimento</th><th>Ação</th>
+            </tr>              
+            <tr *ngFor="let contato of lst; let i = index">
+              <td>{{i}}</td>
+              <td>{{contato.nome}}</td>
+              <td>{{contato.telefone | telefone }}</td>
+              <td>{{contato.email}}</td>
+              <td>{{contato.data_nasc | date}}</td>
+              <td><a href="#" (click)='seleciona(i)'>Editar</a> | <a href="#" (click)='remove(i)'>Remover  </a></td>
+            </tr>
+        </table>
+      </div>
+      <button class="btn btn-block btn-secondary" (click)="limpar()">Limpar</button>
+    </div>
+  </div>
+</div>

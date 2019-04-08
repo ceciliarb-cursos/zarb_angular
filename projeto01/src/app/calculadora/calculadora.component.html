@@ -1,0 +1,32 @@
+<h3>{{ numero1 | cep }}</h3>
+<div class="card calculadora">
+  <div class="card-header"><h3>{{ titulo | uppercase }}</h3></div>  
+  <div class="card-body">
+    <hr>
+    <div class="row">
+      <input type="text" class="form-control" name="numero1" id="numero1" [(ngModel)]="numero1"><br><br>
+    </div>
+    <hr>
+    <div class="row">
+      <select name="operacoes" class="form-control" id="operacoes" [(ngModel)]="operacao">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+      </select>
+    </div>
+    <hr>
+    <div class="row">
+      <input type="text" class="form-control" name="numero1" id="numero1" [(ngModel)]="numero2"><br><br>
+    </div>
+    <div class="row">
+      <button class="btn btn-block btn-primary" (click)="calcular()">Calcula!</button>
+      
+    </div>
+    <div class="row">
+      <div class="col">Resultado</div>
+      <div class="col">{{resultado}}</div>
+    </div>
+
+  </div>  
+</div>
