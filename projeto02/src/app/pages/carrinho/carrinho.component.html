@@ -1,11 +1,12 @@
 <h4>Carrinho de compras</h4>
 
-<div style="height: 40%; overflow: auto">
-    <div class="card" *ngFor="let produto of carrinhoOuter">
+<div style="height: 80%; overflow: auto">
+    <div class="card" *ngFor="let produto of carrinho; let i = index">
       <div class="card-body text-center">
         <img [src]="produto.produto.foto" alt="" height="60px">
         <h5 class="card-title">{{ produto.produto.nome }}</h5>
         <h6 class="card-subtitle mb-2 text-muted">Quantidade: {{ produto.qtd }}</h6>
+        <input type="number" style="width:4em" #qtd (change)="atualizaQtd(qtd.value, i)" [value]="produto.qtd">
       </div>
     </div>
   </div>

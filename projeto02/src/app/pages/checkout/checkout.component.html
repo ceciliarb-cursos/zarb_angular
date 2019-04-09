@@ -1,25 +1,27 @@
 <h4>Finalizar compra</h4>
+<h3>{{ total | currency: 'BRL' }}</h3>
+
 <div class="formulario">
   <div class="form-group">
-    <input class="form-control" type="text" placeholder="Nome">
+    <input class="form-control" type="text" placeholder="Nome" [(ngModel)]="compra.cliente.nome">
   </div>
   <div class="form-group">
-    <input class="form-control" type="email" placeholder="E-mail">
+    <input class="form-control" type="email" placeholder="E-mail" [(ngModel)]="compra.cliente.email">
   </div>
   <div class="form-group">
-    <input class="form-control" type="text" placeholder="Numero do cartao">
+    <input class="form-control" type="text" placeholder="Numero do cartao" [(ngModel)]="compra.cliente.cartao">
   </div>
   <div class="form-group">
     <div class="row">
       <div class="col">
-        <input class="form-control" type="text" placeholder="mm/aaaa">
+        <input class="form-control" type="text" placeholder="mm/aaaa" [(ngModel)]="compra.cliente.validade">
       </div>
       <div class="col">
-        <input class="form-control" type="text" placeholder="CVV">
+        <input class="form-control" type="text" placeholder="CVV" [(ngModel)]="compra.cliente.cvv">
       </div>
     </div>
   </div>
   <div class="form-group">
-      <button class="btn btn-info btn-block">Finalizar</button>
+      <button class="btn btn-info btn-block" (click)="finalizar()">Finalizar</button>
     </div>
   </div>

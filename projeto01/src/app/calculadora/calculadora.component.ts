@@ -14,24 +14,24 @@ export class CalculadoraComponent implements OnInit {
 
   constructor() { }
 
-  calcular() {
-    switch (this.operacao) {
+  calcular(numero1, operacao, numero2) {
+    switch (operacao) {
       case "+":
-        this.resultado = Number(this.numero1) + Number(this.numero2);
+        this.resultado = Number(numero1) + Number(numero2);
         break;
       case "-":
-      this.resultado = this.numero1 - this.numero2;
+      this.resultado = numero1 - numero2;
         break;
       case "*":
-      this.resultado = this.numero1 * this.numero2;
+      this.resultado = numero1 * numero2;
         break;
       case "/":
-      this.resultado = this.numero1 / this.numero2;
+      this.resultado = numero1 / numero2;
         break;
       default:
         break;
     }
-    console.log(`Clicou em calcular: ${this.numero1} ${this.operacao} ${this.numero2} = ${this.resultado}`);
+    console.log(`Clicou em calcular: ${numero1} ${operacao} ${numero2} = ${this.resultado}`);
   }
 
   ngOnInit() {

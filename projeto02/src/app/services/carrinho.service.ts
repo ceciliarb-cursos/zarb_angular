@@ -1,20 +1,34 @@
 import { Injectable } from '@angular/core';
-// import { Observable, BehaviorSubject } from "rxjs";
+import { BehaviorSubject } from "rxjs";
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CarrinhoService {
-  // private carrinhoSubject = new BehaviorSubject(null);
-  private carrinho: any = [];
+  public carrinho: any = [];
+  public carrinhoSource = new BehaviorSubject(this.carrinho);
+  public data = this.carrinhoSource.asObservable();
+  public url_api = "http://localhost:3000";
 
-  constructor() { }
-
-  getCarrinho() {
-    return this.carrinho;
+  constructor(public http: HttpClient) { 
+    this.carrinhoSource.next(this.getCarrinho());
   }
 
-  setCarrinho(carrinho) {
-    this.carrinho = carrinho;
+  getCarrinho() {
+    if(localStorage.getItem('carrinho'))
+      return JSON.parse(localStorage.getItem('carrinho'));
+    else  
+      return [];
+  }
+
+  updateCarrinho(carrinho) {
+    localStorage.setItem('carrinho', JSON.stringify(carrinho));
+    this.carrinhoSource.next(carrinho);
+  }
+
+  finalizaCompra(compra) {
+    console.log(this.url_api, compra);
+    return this.http.post(this.url_api+'/compras', compra);
   }
 }

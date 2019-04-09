@@ -4,11 +4,12 @@
   <div class="card-body">
     <hr>
     <div class="row">
-      <input type="text" class="form-control" name="numero1" id="numero1" [(ngModel)]="numero1"><br><br>
+      <!-- n1, op e n2 = template variables -->
+      <input type="text" #n1 class="form-control" name="numero1" id="numero1" [(ngModel)]="numero1"><br><br>
     </div>
     <hr>
     <div class="row">
-      <select name="operacoes" class="form-control" id="operacoes" [(ngModel)]="operacao">
+      <select name="operacoes" #op class="form-control" id="operacoes" [(ngModel)]="operacao">
         <option value="+">+</option>
         <option value="-">-</option>
         <option value="*">*</option>
@@ -17,10 +18,10 @@
     </div>
     <hr>
     <div class="row">
-      <input type="text" class="form-control" name="numero1" id="numero1" [(ngModel)]="numero2"><br><br>
+      <input type="text" #n2 class="form-control" name="numero2" id="numero2" [(ngModel)]="numero2"><br><br>
     </div>
     <div class="row">
-      <button class="btn btn-block btn-primary" (click)="calcular()">Calcula!</button>
+      <button class="btn btn-block btn-primary" (click)="calcular(n1.value, op.value, n2.value)">Calcula!</button>
       
     </div>
     <div class="row">
