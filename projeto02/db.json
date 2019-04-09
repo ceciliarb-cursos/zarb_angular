@@ -1,4 +1,38 @@
 {
+  "compras": [
+    {
+      "cliente": {
+        "nome": "dsafasdf",
+        "email": "asdfsdf",
+        "cartao": "adsfasdf",
+        "validade": "adsfdsf",
+        "cvv": "asdfsdf"
+      },
+      "produtos": [
+        {
+          "produto": {
+            "id": 4,
+            "nome": "IPhone 7",
+            "foto": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRU-C5rgVjhYty-NMhfYH9-cIWbfCDkCOnR3nxeR6CdAO04CGT_XA",
+            "preco": "1100",
+            "qtd": "4"
+          },
+          "qtd": 3
+        },
+        {
+          "produto": {
+            "id": 1,
+            "nome": "IPhone 5",
+            "foto": "https://d26lpennugtm8s.cloudfront.net/stores/112/482/products/panasonic-gd551-4b97661cef3165337b14731673693500-1024-1024.jpg",
+            "preco": "800"
+          },
+          "qtd": 1
+        }
+      ],
+      "total": 4100,
+      "id": 1
+    }
+  ],
   "clients": [
     {
       "id": 1,

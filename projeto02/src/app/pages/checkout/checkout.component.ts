@@ -28,7 +28,12 @@ export class CheckoutComponent implements OnInit {
   finalizar() {
     this.compra.produtos = this.carrinho;
     this.compra.total = this.total;
-    this.carrinhoService.finalizaCompra(this.compra);
+    this.carrinhoService.finalizaCompra(this.compra).subscribe(info => {
+      console.log(info);
+    }, erro => {
+      alert("Falha na requisicao");
+      console.log(erro);
+    });
   }
 
   ngOnInit() {
