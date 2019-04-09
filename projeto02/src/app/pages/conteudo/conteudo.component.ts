@@ -6,10 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./conteudo.component.scss']
 })
 export class ConteudoComponent implements OnInit {
-
   constructor() { }
+
+  carrinhoOuter: {};
 
   ngOnInit() {
   }
 
+  opa($event) {
+    this.carrinhoOuter = $event.data;
+    console.log($event);
+  }
 }
