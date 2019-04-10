@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CarrinhoService } from "../../services/carrinho.service";
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-checkout',
@@ -17,7 +18,7 @@ export class CheckoutComponent implements OnInit {
               "cvv": "",
             }, "produtos": [], "total": 0 };
 
-  constructor(private carrinhoService: CarrinhoService) { 
+  constructor(private carrinhoService: CarrinhoService, private router: Router) { 
     this.carrinhoService.data.subscribe(info => { this.carrinho = info });
 
     this.total = this.carrinho.reduce(function(previousValue, currentValue) {
@@ -29,6 +30,9 @@ export class CheckoutComponent implements OnInit {
     this.compra.produtos = this.carrinho;
     this.compra.total = this.total;
     this.carrinhoService.finalizaCompra(this.compra).subscribe(info => {
+      this.carrinhoService.updateCarrinho([]);
+      this.router.navigate(['']);
+      alert("Compra efetuada com sucesso");
       console.log(info);
     }, erro => {
       alert("Falha na requisicao");
